@@ -1,4 +1,4 @@
-name: docs
+name: deploy
 
 run-name: Deploy by @${{ github.actor }}
 
