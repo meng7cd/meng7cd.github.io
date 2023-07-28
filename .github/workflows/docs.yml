@@ -24,15 +24,6 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      # 安装 Node 环境
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          # 选择要使用的 node 版本
-          node-version: "18"
-          # 缓存 pnpm 依赖
-          cache: pnpm
-
       # 安装依赖 pnpm
       - name: etup pnpm Install dependencies
         # 如果没有命中缓存才执行 pnpm install
@@ -43,6 +34,15 @@ jobs:
           version: 8
           # 使用 pnpm 安装依赖
           run_install: true
+
+      # 安装 Node 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          # 选择要使用的 node 版本
+          node-version: "18"
+          # 缓存 pnpm 依赖
+          cache: pnpm
 
       # 运行构建脚本
       - name: Build VuePress site
