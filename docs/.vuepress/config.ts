@@ -25,12 +25,20 @@ export default defineUserConfig({
     // 默认主题配置
     navbar: [
       {
-        text: "首页",
+        text: "主页",
         link: "/",
       },
       {
         text: "文档",
         link: "/docs/",
+      },
+      {
+        text: "标签",
+        link: "/tags/",
+      },
+      {
+        text: "关于",
+        link: "/about/",
       },
     ],
     // 多语言
@@ -39,6 +47,7 @@ export default defineUserConfig({
         selectLanguageName: "简体中文",
       },
     },
+    backToHome: '返回主页'
   }),
   // 开发配置 -> 服务器端口
   port: 8080,
