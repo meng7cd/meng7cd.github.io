@@ -29,18 +29,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           # 选择要使用的 node 版本
-          node-version: "16"
+          node-version: "18"
           # 缓存 pnpm 依赖
           cache: pnpm
-
-      # 缓存 pnpm node_modules
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.pnpm
-          key: ${{ runner.os }}-pnpm-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-cache-
 
       # 安装依赖 pnpm
       - name: etup pnpm Install dependencies
